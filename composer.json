@@ -1,0 +1,12 @@
+{
+    "name": "william/php_project",
+    "require": {
+        "fakerphp/faker": "^1.16"
+    },
+    "autoload":{
+        "psr-4":{
+            "Libs\\":"_classes/Libs/",
+            "Helpers\\":"_classes/Helpers/"
+        }
+    }
+}

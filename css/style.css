@@ -1,0 +1,21 @@
+
+.submit
+{
+    justify-content:center;
+    flex-direction: row;
+    display:flex;
+}
+
+.blank_profile
+{
+    border-radius:50%;
+    width: 20%;
+    height:20%;
+}
+
+.photo_upload
+{
+  
+    display: flex;
+    justify-content: center;
+}
