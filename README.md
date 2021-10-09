@@ -17,6 +17,7 @@ project/
 │ ├── suspend.php
 │ ├── unsuspend.php
 │ └── upload.php
+│ └── edit.php
 │
 ├── _classes/
 │ ├── Helpers/
@@ -27,3 +28,7 @@ project/
 │ └── Database/
 │ ├── MySQL.php
 │ └── UsersTable.php
+│ admin.php
+│ profile.php
+│ register.php
+│ index.php
