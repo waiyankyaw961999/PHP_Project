@@ -49,6 +49,23 @@ class UsersTable
         
     }
 
+    public function getOne($id)
+    {
+        try
+        {
+            $query = "SELECT users.*,roles.name as role,roles.value FROM users LEFT JOIN roles ON users.roles_id = roles.id WHERE users.id=:id";
+
+            $statement = $this->db->prepare($query);
+            $statement->execute([':id'=>$id]);
+            return $statement->fetch();
+        }
+        catch(PDOException $e)
+        {
+            return $e->getMessage();
+        }
+        
+    }
+
     public function findID($id)
     {
         try

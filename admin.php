@@ -56,7 +56,7 @@ $users_data = $db->getAll();
           <?php foreach($users_data as $user):?>
             <tr class="<?= $user['id']== $user_session['id']? 'table-info':''?>" >
             <th scope="row"><?= $user['id'] ?></th>
-            <td><?= $user['name'] ?></td>
+            <td><a href="profile.php?id=<?= $user['id']?>"><?= $user['name'] ?></a></td>
             <td><?= $user['email'] ?></td>
             <td><?= $user['phone'] ?></td>
             <td><?php if($user['value']==="1"): ?>
