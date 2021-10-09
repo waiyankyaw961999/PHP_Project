@@ -17,8 +17,8 @@ class UsersTable
     {
         try 
         {
-            $query = " INSERT INTO users (name,phone,email,password,address,role_id,created_at)
-            VALUES (:name,:phone,:email,:password,:address,:role_id,NOW())";
+            $query = " INSERT INTO users (name,phone,email,password,address,roles_id,photo,created_at)
+            VALUES (:name,:phone,:email,:password,:address,:roles_id,:photo,NOW())";
 
             $statement = $this->db->prepare($query);
             $statement->execute($data);
@@ -30,6 +30,7 @@ class UsersTable
         }
 
     }
+
 
     public function getAll()
     {
@@ -73,7 +74,7 @@ class UsersTable
 
             $statement = $this->db->prepare($query);
             $statement->execute([':email'=>$email,
-                                ':password'=>$password]);
+                                 ':password'=>$password]);
             return $statement->fetch();
         }
         catch(PDOException $e)
@@ -89,7 +90,7 @@ class UsersTable
     {
         try
         {
-            $query = "UPDATE users SET suspended=1 WHERE id= :id";
+            $query = "UPDATE users SET `suspended`=1 WHERE id= :id";
             $statement = $this->db->prepare($query);
             return $statement->execute([':id'=>$id]); 
         }
@@ -104,7 +105,7 @@ class UsersTable
     {
         try
         {
-            $query = "UPDATE users SET suspended=0 WHERE id= :id";
+            $query = "UPDATE `users` SET `suspended`=0 WHERE id= :id";
             $statement = $this->db->prepare($query);
             return $statement->execute([':id'=>$id]); 
         }
@@ -126,12 +127,12 @@ class UsersTable
         {
             return $e->getMessage();
         }
-        }
+    }
 
     public function changerole($id,$role)
     {   try
         {
-            $query = "UPDATE users SET 'role_id'=:role WHERE id=:id";
+            $query = "UPDATE `users` SET `roles_id`=:role,`updated_at`=NOW() WHERE id=:id";
 
             $statement = $this->db->prepare($query);
             return $statement->execute([':id'=>$id,':role'=>$role]);

@@ -28,7 +28,7 @@ use Helpers\showMessage;
         <div class="form-group row p-3">
     <label for="staticEmail" class="col-sm-2 col-md-3 col-form-label text-center">Email</label>
         <div class="col-sm-10 col-md-6">
-            <input type="text" class="form-control" name="email" placeholder="email@example.com">
+            <input type="email" class="form-control" name="email" placeholder="email@example.com">
         </div>
     </div>
     <div class="form-group row p-3">

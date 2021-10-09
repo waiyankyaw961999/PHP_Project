@@ -14,7 +14,7 @@ class Auth
             }
             else
             {
-                HTTP::redirect('/index.php');
+                HTTP::redirect('index.php');
             }
     }
 

@@ -19,3 +19,8 @@
     display: flex;
     justify-content: center;
 }
+
+.logout
+{
+    color:black;
+}
