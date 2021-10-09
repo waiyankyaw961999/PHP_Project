@@ -1,7 +1,6 @@
-# User-Management-System
+# User-Management-Dashboard
 
 This project is from the book of PHP On Point written by Sir Ei Maung(Fairway Technology). This project is about managing users and set some funtionalities for respective user roles.
-I i
 
 ## Tree Structure of the whole Project
 
