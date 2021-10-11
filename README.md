@@ -20,7 +20,7 @@ project/
 │
 ├── _classes/
 │ ├── Helpers/
-│ │ ├── Auth.php                //check authourization
+│ │ ├── Auth.php                // check authourization
 │ │ └── HTTP.php                // redirect page
 | | └── showMessage.php         // to show session message
 │ └── Libs/
