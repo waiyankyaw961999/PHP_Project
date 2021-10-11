@@ -2,7 +2,6 @@
 
 namespace Helpers;
 session_start();
-
 class Auth
 {
     static function check()
@@ -41,6 +40,23 @@ class Auth
 
         return $data;
        
+    }
+
+    static function editValidate($data)
+    {
+        $error = [];
+        $keys = array_keys($data);
+        for($x = 0; $x<sizeof($data);$x++)        
+        {
+            $test_input = trim($data[$keys[$x]]);
+            $test_input = stripslashes($data[$keys[$x]]);
+            $test_input = htmlspecialchars($data[$keys[$x]]);
+
+            $data[$keys[$x]]= $test_input;            
+        };      
+
+        return $data;
+
     }
     
 

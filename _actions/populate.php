@@ -21,7 +21,8 @@ if($table)
         'email'=> $faker->email,
         'password'=>md5('password'),
         'address'=>$faker->address,      
-        'roles_id'=> $i <5 ? rand(1,3):1
+        'roles_id'=> $i <5 ? rand(1,3):1,
+        'photo'=> 'blank_profile.webp'
         ];
         $table->insert($data);
     }

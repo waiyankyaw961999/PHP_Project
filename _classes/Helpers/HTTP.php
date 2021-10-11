@@ -1,7 +1,6 @@
 <?php 
 
 namespace Helpers;
-session_start();
 
 class HTTP
 {

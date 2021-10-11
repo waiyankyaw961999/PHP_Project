@@ -1,11 +1,11 @@
 <?php
-session_start();
 require_once("vendor/autoload.php");
 
 use Libs\Databases\MySQL;
 use Libs\Databases\UsersTable;
 use Helpers\Auth;
 use Helpers\HTTP;
+use Helpers\showMessage;
 
 $auth = Auth::check();
 
@@ -31,7 +31,9 @@ $users_data = $db->getAll();
     <div class="container m-3">
     <h2 class="text-center text-primary">Welcome <?php echo $user_session['name'] ?></h2>
     <br>  
-
+    <?php
+    showMessage::session_message();
+    ?>
     <table class="table table-hover">
       <thead>
         <tr>
@@ -96,7 +98,7 @@ $users_data = $db->getAll();
                       <?php else: ?>
                         <a href="_actions/unsuspend.php?id=<?= $user['id']?>" class="btn btn-sm btn-danger m-1">Unsuspend</a>
                       <?php endif ?>
-                        <a href="_actions/suspend.php?id=<?= $user['id']?>" class="btn btn-sm btn-outline-danger m-1" onClick="return confirm(Are you Sure?)">Delete</a>
+                        <a href="_actions/delete.php?id=<?= $user['id']?>" class="btn btn-sm btn-danger m-1" onClick="return confirm(Are you Sure?)">Delete</a>
                     </div>                     
                         
                       

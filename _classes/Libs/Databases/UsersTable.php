@@ -31,6 +31,23 @@ class UsersTable
 
     }
 
+    public function update($data)
+    {
+        try 
+        {
+            $query = " UPDATE `users` SET `name`= :name,`phone`= :phone,`email`= :email,`password`=:password,`address`=:address,`photo`=:photo,`updated_at`= NOW() WHERE id= 3;";
+
+            $statement = $this->db->prepare($query);
+            $statement->execute($data);
+        return $statement; 
+        }
+        catch (PDOException $e)
+        {
+            return $e->getMessage()();
+        }
+
+    }
+
 
     public function getAll()
     {
@@ -136,7 +153,7 @@ class UsersTable
     {
         try
         {
-            $query = "DELETE FROM users WHERE id=:id";
+            $query = "DELETE FROM `users` WHERE id=:id";
             $statment = $this->db->prepare($query);
             return $statment->execute([':id'=>$id]);
         }

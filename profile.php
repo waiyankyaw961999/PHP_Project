@@ -42,12 +42,13 @@ if($_GET['id'])
     <div class="container-fluid">
         <div class="row">
             <div class="user_profile">
-                <img class="" src="https://cdn-icons-png.flaticon.com/256/4825/4825031.png"><br>
-                <a href="/_actions/edit.php" class="btn btn-sm btn-success">Edit</a>
-            </div>
+                <img class="" src="_actions/photos/<?= $user['photo']?>"</br>
+                
+            </div> 
+            <a href="/_actions/edit.php?id=<?= $user['id'] ?>" class="fs-6 btn btn-sm btn-primary">Change your Profile</a>
             
         </div>        
-        <div class="m-2">
+        <div class="m-2 text-center">
         <?php
             echo "<p class='display-9'>Name: {$user['name']}</p>
                   <p class='display-11'>Email: {$user['email']}</p>

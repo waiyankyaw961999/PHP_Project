@@ -36,7 +36,7 @@ if(isset($_POST))
         $data = $validate_data;
         
         $data['address'] = $data['city'].', '.$data['state'].', '.$data['zip'];
-        $data['roles_id'] = 3;
+        $data['roles_id'] = 1;
         unset($data['city']);
         unset($data['state']);
         unset($data['zip']);
@@ -52,13 +52,7 @@ if(isset($_POST))
             move_uploaded_file($tmp,"photos/$name");
             $data['photo'] = $name;
         }
-        $db->insert($data); 
-
-        
-
-        
-
-
+        $db->insert($data);       
         HTTP::redirect('index.php','Success Registration.');
 
     }
